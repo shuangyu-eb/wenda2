@@ -7,5 +7,12 @@ pipeline {
             echo 'Hello World'
          }
       }
+
+     stage('pwd') {
+         steps {
+             sh 'pwd'
+          }
+      }
+
    }
 }
