@@ -16,8 +16,7 @@ pipeline {
 
       stage('check volume') {
          steps {
-             sh 'cd /home/jenkins/mvn-repo'
-             sh 'ls'
+             sh 'cat /home/jenkins/mvn-repo/data-test'
          }
 
       }
