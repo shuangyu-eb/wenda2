@@ -16,7 +16,7 @@ pipeline {
 
       stage('docker run') {
          steps {
-             sh 'docker inspect gifted_galileo'
+             sh 'cd /home/jenkins/mvn-repo'
          }
 
       }
