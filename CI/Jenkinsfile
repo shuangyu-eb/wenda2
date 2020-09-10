@@ -14,9 +14,10 @@ pipeline {
           }
       }
 
-      stage('docker run') {
+      stage('check volume') {
          steps {
              sh 'cd /home/jenkins/mvn-repo'
+             sh 'ls'
          }
 
       }
