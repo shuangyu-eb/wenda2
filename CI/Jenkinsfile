@@ -21,6 +21,16 @@ pipeline {
 
       }
 
+      stage('check sonarQube') {
+
+         steps {
+           withCredentials([string(credentialsId: 'sonarqube-token', variable: 'TOKEN')]) {
+              echo '$TOKEN'
+           }
+         }
+
+      }
+
 
       stage('mvn test') {
          steps {
