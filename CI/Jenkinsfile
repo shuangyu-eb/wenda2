@@ -21,6 +21,13 @@ pipeline {
 
       }
 
+       stage('check volumes and find dind') {
+          steps {
+              sh 'find /usr/bin/docker'
+            }
+
+        }
+
       stage('check sonarQube') {
 
          steps {
