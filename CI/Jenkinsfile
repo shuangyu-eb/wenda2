@@ -17,6 +17,8 @@ pipeline {
       stage('check volume') {
          steps {
              sh 'cat /home/jenkins/.m2/repository/data-test'
+             sh 'docker'
+             sh 'docker info'
          }
 
       }
