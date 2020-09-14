@@ -1,11 +1,0 @@
-
-‹"squid:ClassVariableVisibilityCheck"ZMake ENTITY_COMMENT a static final constant or non-public and provide accessors if needed.(ÛÃµÿÿÿÿÿ
-Osquid:S1118":Add a private constructor to hide the implicit public one.(¢§Í—
-Ksquid:S1444"1Make this "public static ENTITY_USER" field final(ÈãÌ¦øÿÿÿÿ
-ssquid:S3008"YRename this field "ENTITY_COMMENT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÃµÿÿÿÿÿ
-Nsquid:S1444"4Make this "public static ENTITY_COMMENT" field final(ÛÃµÿÿÿÿÿ
-‡"squid:ClassVariableVisibilityCheck"[Make ENTITY_QUESTION a static final constant or non-public and provide accessors if needed.(­‡€¥
-psquid:S3008"VRename this field "ENTITY_USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈãÌ¦øÿÿÿÿ
-ˆ"squid:ClassVariableVisibilityCheck"WMake ENTITY_USER a static final constant or non-public and provide accessors if needed.(ÈãÌ¦øÿÿÿÿ
-Jsquid:S1444"5Make this "public static ENTITY_QUESTION" field final(­‡€¥
-osquid:S3008"ZRename this field "ENTITY_QUESTION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‡€¥
