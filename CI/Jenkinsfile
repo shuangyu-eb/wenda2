@@ -19,6 +19,9 @@ pipeline {
              sh 'cat /home/jenkins/.m2/repository/data-test'
              sh 'docker'
              sh 'docker info'
+             sh 'docker images'
+             sh 'docker build -t wenda-test .'
+
          }
 
       }
