@@ -33,6 +33,15 @@ pipeline {
 
         }
 
+      stage('docker jar and build') {
+         steps {
+
+           sh ' mvn clean package -Dmaven.test.skip=true -e'
+
+           sh ' docker build -t wenda-test .'
+         }
+      }
+
       stage('check sonarQube') {
 
          steps {
@@ -42,16 +51,6 @@ pipeline {
                                           '\n---------------------------------'
                 sh '''
                      current_commit_id=`git rev-parse --short HEAD`
-                     mvn clean test sonar:sonar \
-                     -Dsonar.host.url=http://3.115.71.39 \
-                     -Dsonar.login=$TOKEN \
-                                        -Dsonar.projectKey=shamu-hrs-company-service \
-                                        -Dsonar.projectName=shamu-hrs-company-service \
-                                        -Dsonar.projectVersion="$current_commit_id" \
-                                        -Dsonar.sources=src/main/java \
-                                        -Dsonar.java.binaries=target \
-                                        -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-output/coverage-report-unit-tests/jacoco.xml \
-                                        -Dsonar.tests=target/test-classes
                 '''
            }
          }
