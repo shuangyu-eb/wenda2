@@ -15,12 +15,11 @@ pipeline {
       }
 
 
-      stage('mvn test') {
+      stage('Build number') {
+
          steps {
-            sh 'CRUMB=$(curl -s 'http://easternbay:11d0b40928a68f0e2963eab314ac1ad0b8@3.112.6.241:80/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
-  '
-            sh 'curl -X POST -H "$CRUMB" http://easternbay:11d0b40928a68f0e2963eab314ac1ad0b8@3.112.6.241:80/job/docker-slave-pipeline-test/lastBuild/consoleText'
-                      }
+         echo "Build number is ${currentBuild.number}"
+         }
       }
 
 
