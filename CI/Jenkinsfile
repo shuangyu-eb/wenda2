@@ -14,54 +14,13 @@ pipeline {
           }
       }
 
-      stage('check volume') {
-         steps {
-             sh 'cat /home/jenkins/.m2/repository/data-test'
-             sh 'docker'
-             sh 'docker info'
-             sh 'docker images'
-             sh 'docker build -t wenda-test .'
-
-         }
-
-      }
-
-       stage('check volumes and find dind') {
-          steps {
-              sh 'find /usr/bin/docker'
-            }
-
-        }
-
-      stage('docker jar and build') {
-         steps {
-
-           sh ' mvn clean package -Dmaven.test.skip=true -e'
-
-           sh ' docker build -t wenda-test .'
-         }
-      }
-
-      stage('check sonarQube') {
-
-         steps {
-           withCredentials([string(credentialsId: 'sonarqube-token', variable: 'TOKEN')]) {
-               echo '---------------------------------\n' +
-                                          '            Unit test            ' +
-                                          '\n---------------------------------'
-                sh '''
-                     current_commit_id=`git rev-parse --short HEAD`
-                '''
-           }
-         }
-
-      }
-
 
       stage('mvn test') {
          steps {
-            sh 'mvn clean test'
-          }
+            sh 'CRUMB=$(curl -s 'http://easternbay:11d0b40928a68f0e2963eab314ac1ad0b8@3.112.6.241:80/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
+  '
+            sh 'curl -X POST -H "$CRUMB" http://easternbay:11d0b40928a68f0e2963eab314ac1ad0b8@3.112.6.241:80/job/docker-slave-pipeline-test/lastBuild/consoleText'
+                      }
       }
 
 
