@@ -8,6 +8,12 @@ pipeline {
          }
       }
 
+      stage('Run Docker') {
+          steps {
+             sh 'docker run shuangyu/jenkins-docker-env'
+           }
+       }
+
      stage('pwd') {
          steps {
              sh 'pwd'
