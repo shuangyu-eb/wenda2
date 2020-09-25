@@ -12,6 +12,7 @@ pipeline {
           steps {
              sh 'docker run -i shuangyu/jenkins-docker-env bash'
              sh 'pwd'
+             sh 'git --version'
            }
        }
 
