@@ -10,7 +10,7 @@ pipeline {
 
       stage('Generate Docker ENV') {
           steps {
-             sh 'docker run shuangyu/jenkins-docker-env'
+             sh 'docker run -it shuangyu/jenkins-docker-env bash'
              sh 'pwd'
            }
        }
