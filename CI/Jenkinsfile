@@ -10,7 +10,7 @@ pipeline {
 
       stage('Generate Docker ENV') {
           steps {
-             sh 'mvn test'
+             sh 'mvn install'
 
 
            }
