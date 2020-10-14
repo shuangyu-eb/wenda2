@@ -8,19 +8,12 @@ pipeline {
          }
       }
 
-      stage('Generate Docker ENV') {
-          steps {
-             sh 'mvn install'
+       stage('pwd') {
+               steps {
+                   sh 'pwd'
+                }
+            }
 
-
-           }
-       }
-
-     stage('pwd') {
-         steps {
-             sh 'pwd'
-          }
-      }
 
 
    }
