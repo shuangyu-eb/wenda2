@@ -1,5 +1,5 @@
 pipeline {
-   agent { label 'ec2-fleet'}
+   agent { label 'docker-efs-test'}
 
    stages {
       stage('Run Docker') {
@@ -10,10 +10,8 @@ pipeline {
 
       stage('Generate Docker ENV') {
           steps {
-             sh 'docker run -i shuangyu/jenkins-docker-env bash'
-             sh 'pwd'
-             sh 'git --version'
              sh 'mvn test'
+
 
            }
        }
@@ -22,14 +20,6 @@ pipeline {
          steps {
              sh 'pwd'
           }
-      }
-
-
-      stage('Build number') {
-
-         steps {
-         echo "Build number is ${currentBuild.number}"
-         }
       }
 
 

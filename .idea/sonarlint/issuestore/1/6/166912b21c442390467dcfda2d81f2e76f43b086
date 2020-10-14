@@ -1,0 +1,6 @@
+
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(®À“üþÿÿÿÿ
+¢%squid:RedundantThrowsDeclarationCheck"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ
+r
+squid:S135"YReduce the total number of break and continue statements in this loop to use at most one.(üŠ‘îùÿÿÿÿ
+lsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(Àø’ìúÿÿÿÿ
